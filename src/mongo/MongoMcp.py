@@ -13,6 +13,7 @@ import os
 import json
 import jwt
 import time
+import base64
 
 
 
@@ -30,9 +31,20 @@ def get_or_create_keypair():
     public_key_env = os.environ.get('MCP_PUBLIC_KEY')
     
     if private_key_env and public_key_env:
+
+        try:
+            private_key_decoded = base64.b64decode(private_key_env).decode('utf-8')
+            public_key_decoded = base64.b64decode(public_key_env).decode('utf-8')
+            print("✅ Claves decodificadas desde Base64")
+        except Exception:
+
+            private_key_decoded = private_key_env
+            public_key_decoded = public_key_env
+            print("✅ Usando claves en texto plano")
+        
         return RSAKeyPair(
-            private_key=SecretStr(private_key_env),
-            public_key=public_key_env
+            private_key=SecretStr(private_key_decoded),
+            public_key=public_key_decoded
         )
     
     keypair_file = "mcp_keypair.json"
