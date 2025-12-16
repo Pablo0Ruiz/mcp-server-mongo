@@ -1,0 +1,42 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+venv/
+env/
+ENV/
+
+# Environment variables y archivos sensibles
+.env
+*.env
+.env.*
+*.key
+*.pem
+*_keypair.json
+*_token.txt
+client_token.txt
+mcp_keypair.json
+
+# Archivos temporales
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+
+# IDEs y editores
+.vscode/
+.idea/
+*.sublime-*
+.DS_Store
+
+# Carpetas específicas del proyecto
+teoria
+src/server
+src/Email
