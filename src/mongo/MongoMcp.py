@@ -110,7 +110,7 @@ auth = JWTVerifier(
 mcp = FastMCP("MongoDB Manager", auth=auth)
 
 @mcp.tool()
-def list_content(**kwargs) -> List[Dict[str, Any]]:
+def list_content() -> List[Dict[str, Any]]:
     """
     Herramienta para listar todo el contenido de la colección.
     
@@ -125,7 +125,7 @@ def list_content(**kwargs) -> List[Dict[str, Any]]:
 
 
 @mcp.tool()
-def filter_product(filtro: dict, **kwargs) -> Dict[str, Any]:
+def filter_product(filtro: dict) -> Dict[str, Any]:
     """
     Busca un producto en la colección según el filtro proporcionado.
     
@@ -145,7 +145,7 @@ def filter_product(filtro: dict, **kwargs) -> Dict[str, Any]:
 
 
 @mcp.tool()
-def insert_product(producto: dict, **kwargs) -> str:
+def insert_product(producto: dict) -> str:
     """
     Inserta un nuevo producto en la colección.
     
@@ -160,7 +160,7 @@ def insert_product(producto: dict, **kwargs) -> str:
 
 
 @mcp.tool()
-def delete_product(filtro: dict, **kwargs) -> str:
+def delete_product(filtro: dict) -> str:
     """
     Elimina un producto de la colección.
     
@@ -179,7 +179,7 @@ def delete_product(filtro: dict, **kwargs) -> str:
 
 
 @mcp.tool()
-def update_product(filtro: dict, actualizacion: dict, **kwargs) -> str:
+def update_product(filtro: dict, actualizacion: dict) -> str:
     """
     Actualiza un producto en la colección.
     
@@ -206,7 +206,7 @@ def update_product(filtro: dict, actualizacion: dict, **kwargs) -> str:
 
 
 @mcp.tool()
-def count_products(filtro: dict = None, **kwargs) -> int:
+def count_products(filtro: dict = None) -> int:
     """
     Cuenta los productos en la colección.
     
