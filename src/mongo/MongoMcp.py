@@ -110,7 +110,25 @@ auth = JWTVerifier(
 mcp = FastMCP("MongoDB Manager", auth=auth)
 
 @mcp.tool()
-def list_content() -> List[Dict[str, Any]]:
+def list_content(
+    # Parámetros opcionales que n8n puede enviar (se ignoran)
+    update_id: int = None,
+    message: dict = None,
+    toolCallId: str = None,
+    type: str = None,
+    user: dict = None,
+    ts: str = None,
+    client_msg_id: str = None,
+    text: str = None,
+    team: str = None,
+    blocks: list = None,
+    channel: str = None,
+    event_ts: str = None,
+    channel_type: str = None,
+    sessionId: str = None,
+    action: str = None,
+    chatInput: str = None
+) -> List[Dict[str, Any]]:
     """
     Herramienta para listar todo el contenido de la colección.
     
@@ -125,7 +143,25 @@ def list_content() -> List[Dict[str, Any]]:
 
 
 @mcp.tool()
-def filter_product(filtro: dict) -> Dict[str, Any]:
+def filter_product(
+    filtro: dict,
+    update_id: int = None,
+    message: dict = None,
+    toolCallId: str = None,
+    type: str = None,
+    user: dict = None,
+    ts: str = None,
+    client_msg_id: str = None,
+    text: str = None,
+    team: str = None,
+    blocks: list = None,
+    channel: str = None,
+    event_ts: str = None,
+    channel_type: str = None,
+    sessionId: str = None,
+    action: str = None,
+    chatInput: str = None
+) -> Dict[str, Any]:
     """
     Busca un producto en la colección según el filtro proporcionado.
     
@@ -145,7 +181,26 @@ def filter_product(filtro: dict) -> Dict[str, Any]:
 
 
 @mcp.tool()
-def insert_product(producto: dict) -> str:
+def insert_product(
+    producto: dict,
+    # Parámetros opcionales que n8n puede enviar (se ignoran)
+    update_id: int = None,
+    message: dict = None,
+    toolCallId: str = None,
+    type: str = None,
+    user: dict = None,
+    ts: str = None,
+    client_msg_id: str = None,
+    text: str = None,
+    team: str = None,
+    blocks: list = None,
+    channel: str = None,
+    event_ts: str = None,
+    channel_type: str = None,
+    sessionId: str = None,
+    action: str = None,
+    chatInput: str = None
+) -> str:
     """
     Inserta un nuevo producto en la colección.
     
@@ -160,7 +215,26 @@ def insert_product(producto: dict) -> str:
 
 
 @mcp.tool()
-def delete_product(filtro: dict) -> str:
+def delete_product(
+    filtro: dict,
+    # Parámetros opcionales que n8n puede enviar (se ignoran)
+    update_id: int = None,
+    message: dict = None,
+    toolCallId: str = None,
+    type: str = None,
+    user: dict = None,
+    ts: str = None,
+    client_msg_id: str = None,
+    text: str = None,
+    team: str = None,
+    blocks: list = None,
+    channel: str = None,
+    event_ts: str = None,
+    channel_type: str = None,
+    sessionId: str = None,
+    action: str = None,
+    chatInput: str = None
+) -> str:
     """
     Elimina un producto de la colección.
     
@@ -179,7 +253,27 @@ def delete_product(filtro: dict) -> str:
 
 
 @mcp.tool()
-def update_product(filtro: dict, actualizacion: dict) -> str:
+def update_product(
+    filtro: dict,
+    actualizacion: dict,
+    # Parámetros opcionales que n8n puede enviar (se ignoran)
+    update_id: int = None,
+    message: dict = None,
+    toolCallId: str = None,
+    type: str = None,
+    user: dict = None,
+    ts: str = None,
+    client_msg_id: str = None,
+    text: str = None,
+    team: str = None,
+    blocks: list = None,
+    channel: str = None,
+    event_ts: str = None,
+    channel_type: str = None,
+    sessionId: str = None,
+    action: str = None,
+    chatInput: str = None
+) -> str:
     """
     Actualiza un producto en la colección.
     
@@ -206,7 +300,26 @@ def update_product(filtro: dict, actualizacion: dict) -> str:
 
 
 @mcp.tool()
-def count_products(filtro: dict = None) -> int:
+def count_products(
+    filtro: dict = None,
+    # Parámetros opcionales que n8n puede enviar (se ignoran)
+    update_id: int = None,
+    message: dict = None,
+    toolCallId: str = None,
+    type: str = None,
+    user: dict = None,
+    ts: str = None,
+    client_msg_id: str = None,
+    text: str = None,
+    team: str = None,
+    blocks: list = None,
+    channel: str = None,
+    event_ts: str = None,
+    channel_type: str = None,
+    sessionId: str = None,
+    action: str = None,
+    chatInput: str = None
+) -> int:
     """
     Cuenta los productos en la colección.
     
